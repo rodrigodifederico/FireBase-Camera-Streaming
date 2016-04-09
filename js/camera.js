@@ -1,9 +1,16 @@
-var AppURL = 'https://myapp.firebaseio.com/node'; // INSERT YOUR APP NAME AND NODE TO SAVE THE STREAMING DATA
-var Interval = 600;
+
+
+
+var AppURL = 'https://1oteste.firebaseio.com/mensagem'; // INSERT YOUR APP NAME AND NODE TO SAVE THE STREAMING DATA
+var Interval = 300;
+
+
+
+// ###########################################
 
 var context = null;
 var video = null;
-var root = null;
+var root = new Firebase(AppURL);
 
 $( document ).ready(function() {
 	// Put event listeners into place
@@ -14,6 +21,7 @@ $( document ).ready(function() {
 			errBack = function(error) {
 				console.log("Video capture error: ", error.code); 
 			};
+			
 			
 		context = canvas.getContext("2d");
 		video = document.getElementById("video");
@@ -46,20 +54,22 @@ setInterval(function(){
 	
 		if(enviado==false && primeiro == false){
 			// If it is still sending the data to Firebase, then return
+			console.log("nao rodou");
 			return false;
 		}
-		
+
 		enviado = false;
 		
 		context.drawImage(video, 0, 0, 320,240);
 		encodeImage(canvas.toDataURL(), function(encodedImage) { 
-			root = new Firebase(AppURL);
+
 			root.set(encodedImage);
 			
 			root.on('value', function(snapshot){
 				enviado = true;
 				primeiro = false;
 			});
+			
 		});
 }, Interval);
 
