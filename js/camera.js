@@ -1,7 +1,7 @@
 
 
 
-var AppURL = 'https://1oteste.firebaseio.com/mensagem'; // INSERT YOUR APP NAME AND NODE TO SAVE THE STREAMING DATA
+var AppURL = 'https://myapp.firebaseio.com/node'; // INSERT YOUR APP NAME AND NODE TO SAVE THE STREAMING DATA
 var Interval = 300;
 
 
