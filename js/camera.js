@@ -2,7 +2,7 @@
 
 
 var AppURL = 'https://myapp.firebaseio.com/node'; // INSERT YOUR APP NAME AND NODE TO SAVE THE STREAMING DATA
-var Interval = 300;
+var Interval = 600;
 
 
 
