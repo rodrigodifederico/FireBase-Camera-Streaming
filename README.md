@@ -1,5 +1,5 @@
 # FireBase-Camera-Streaming
-Very simple project using Firebase to stream the camera image, created as a concept test only.
+Project using Firebase to stream the camera image, created as a concept only.
 
 JS/CAMERA.JS is the script that handles camera screenshots and send it to FireBase.
 Change the variables AppURL and Interval.
